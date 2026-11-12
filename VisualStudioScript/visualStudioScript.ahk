@@ -10,33 +10,6 @@ Menu, Tray, Icon, shell32.dll, 283
 Send, std::cout << "" << std::endl;
 return
 
-; log writers works with macros in Visual Studio, otherwise they are not working
-F13::
-::arglog::
-Send, LOG_HIGH_INFO(QString("{asc 0037}1").arg());{Left}{Left}{Left}
-return
-
-F14::
-::loghigh::
-Send, LOG_HIGH_INFO(QString(""));{Left}{Left}{Left}{Left}
-return
-
-F19::
-::loglow::
-Send, LOG_LOW_INFO(QString(""));{Left}{Left}{Left}{Left}
-return
-
-F20::
-::logcrit::
-Send, LOG_CRITICAL(QString(""));{Left}{Left}{Left}{Left}
-return
-
-F21::
-::alcopy::
-Send, ^{Home}
-Send, // Copyright 2021 Alicona Imaging GmbH {ENTER}{ENTER}
-return
-
 ::foreach::
 Send, for ( : ){Left}{Left}{Left}{Left}
 return
@@ -87,28 +60,3 @@ F22::
 Send, {del}<{end}{Backspace}>
 return
 
-; Review template for bitbucket. 
-^F12::
-::bbtmp::
-Send ^a {Del}
-Send {Text} | (NOT)OK :white_check_mark: |  | Notes :blue_book: |`n
-| :----- | :-----: | :----- |`n
-| | :one: GENERAL | |`n
-| OK | Scope well defined and clear | - |`n
-| OK | Concept approved by architect and UX team | - |`n
-| OK | Functionality fulfilled | - |`n
-| OK | Performance of the implementation | - |`n
-| OK | Responsiveness of the application | - |`n
-| OK | Language correct | - |`n
-| OK | Unit test | - |`n
-| OK | Potential impact on production department considered? | - |`n
-| | :two: CODE QUALITY | |`n
-| OK | Code read- and understandable | - |`n
-| OK | No code duplication | - |`n
-| OK | Correct use of const/static | - |`n
-| OK | Exception handling | - |`n
-| OK | IO classes considered | - |`n
-| OK | Settings version number incremented after format change | - |`n
-| OK | GUI and logic separated | - |`n
-| OK | Reasonable log writer | - |`n
-return
